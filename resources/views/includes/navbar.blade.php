@@ -12,9 +12,9 @@ https://www.w3schools.com/bootstrap/bootstrap_navbar.asp-->
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-              <li><a href="home.php">Home Page</a></li> 
-                  <li><a href="create_appointment.php">Appointment</a></li> 
-              <li><a href="view_appointment.php">View Appointments</a></li>
+              <li><a href="/adverts/">Home Page</a></li> 
+                  <li><a href="/adverts/create">Appointment</a></li> 
+              <li><a href="/adverts/">View Appointments</a></li>
             </ul>
                <form class="navbar-form navbar-left" action="search_appointment.php" method="POST">
                   <div class="form-group">

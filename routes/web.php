@@ -11,8 +11,10 @@
 |
 */
 
-Route::get('/', 'PagesController@index');
-
+Route::resource('adverts', 'AdvertController');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/', 'PagesController@index');
 
