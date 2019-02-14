@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Doctor;
-use App\Appoinment;
+use App\Appointment;
+use DB;
 
 class AdvertController extends Controller
 {
@@ -37,7 +38,21 @@ class AdvertController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'patient_name' => 'required',
+            'doctor' => 'required',
+            'date' => 'required',
+            'time' => 'required',
+            'comment' => 'required'
+        ]);
+
+        $appointment = new Appointment;
+        $appointment->patient_name = $request->input('patient_name');
+        $appointment->doctor = $request->input('doctor');
+        $appointment->date = $request->input('date');
+        $appointment->time = $request->input('time');
+        $appointment->comment = $request->input('comment');
+        $appointment->save();
     }
 
     /**

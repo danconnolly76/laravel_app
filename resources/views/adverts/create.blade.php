@@ -13,8 +13,8 @@
           <div class="col-md-8 col-md-offset-2">
             {!! Form::open(['action' => 'AdvertController@store', 'method' => 'POST']) !!}    
               <div class="form-group">
-                {{Form::label('patient name', 'Patient name: ') }}
-                {{Form::text('patient name', '', ['class' => 'form-control', 'placeholder' => 'Patient name'])}}
+                {{Form::label('patient_name', 'Patient name: ') }}
+                {{Form::text('patient_name', '', ['class' => 'form-control', 'placeholder' => 'Patient name'])}}
               </div><!--End of form-group-->
               <div class="form-group">
                 <label for="doctor">Doctor:</label>
@@ -35,14 +35,15 @@
                 <input type="time" name="time">
               </div><!--End of form-group-->
               <div class="form-group">
-              {{Form::label('comment', 'Patient name: ') }}
+              {{Form::label('comment', 'comment: ') }}
               {{Form::textarea('comment', '', ['class' => 'form-control', 'placeholder' => 'Body Text'])}}
               </div><!--End of form-group-->
+              <div class="button-container">
+                {{Form::submit('Submit', ['class' => 'btn btn-success btn-lg btn-block'])}}
+              </div>
               {!! Form::close() !!}
-                <div class="button-container">
-                  {{Form::submit('Submit', ['class' => 'btn btn-success btn-lg btn-block'])}}
-                  </div><!--col-md-8 col-md-offset-2-->
-             </div><!--End of row-->
+            </div><!--col-md-8 col-md-offset-2-->
+          </div><!--End of row-->
         </div><!--End of container-->
     </main>
     
