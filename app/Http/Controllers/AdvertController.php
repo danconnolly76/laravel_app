@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Doctor;
+use App\Appoinment;
 
 class AdvertController extends Controller
 {
@@ -23,7 +25,8 @@ class AdvertController extends Controller
      */
     public function create()
     {
-        return view('adverts.create');
+        $docs = Doctor::all();
+        return view('adverts.create')->with('docs', $docs);
     }
 
     /**
@@ -46,6 +49,17 @@ class AdvertController extends Controller
     public function show($id)
     {
         //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showDocs($id)
+    {
+       
     }
 
     /**

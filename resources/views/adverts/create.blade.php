@@ -11,15 +11,18 @@
         <div class="container">
          <div class="row">
           <div class="col-md-8 col-md-offset-2">
-           <form action="" method="post">    
+            {!! Form::open(['action' => 'AdvertController@store', 'method' => 'POST']) !!}    
               <div class="form-group">
-                <label for="patient_name">Patient name:</label>
-                <input type="text" class="form-control" name="patient_name" placeholder="Enter Name">
+                {{Form::label('patient name', 'Patient name: ') }}
+                {{Form::text('patient name', '', ['class' => 'form-control', 'placeholder' => 'Patient name'])}}
               </div><!--End of form-group-->
               <div class="form-group">
                 <label for="doctor">Doctor:</label>
                 <div class="dropdown">
                     <select id="doctor" class="form-control" name="doctor">
+                      @foreach($docs as $doc)
+                    <option>{{$doc->title}} {{$doc->firstname}} {{$doc->lastname}}</option>
+                      @endforeach
                     </select>
                 </div>
               </div><!--End of form-group-->
@@ -31,13 +34,13 @@
                 <label for="time" class="control-label">Time</label>
                 <input type="time" name="time">
               </div><!--End of form-group-->
-                <div class="form-group">
-          <label for="comment" class="control-label">Comment:</label>
-          <textarea class="form-control" rows="7" name="comment" placeholder="Enter in a comment"></textarea>
-         </div><!--End of form-group-->
+              <div class="form-group">
+              {{Form::label('comment', 'Patient name: ') }}
+              {{Form::textarea('comment', '', ['class' => 'form-control', 'placeholder' => 'Body Text'])}}
+              </div><!--End of form-group-->
+              {!! Form::close() !!}
                 <div class="button-container">
-              <input type="submit" name="appointment_button" class=" btn btn-lg btn-success btn-block" value="Booking">
-                  </form>
+                  {{Form::submit('Submit', ['class' => 'btn btn-success btn-lg btn-block'])}}
                   </div><!--col-md-8 col-md-offset-2-->
              </div><!--End of row-->
         </div><!--End of container-->
