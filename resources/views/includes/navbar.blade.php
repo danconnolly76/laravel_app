@@ -14,7 +14,7 @@ https://www.w3schools.com/bootstrap/bootstrap_navbar.asp-->
             <ul class="nav navbar-nav">
               <li><a href="/adverts/">Home Page</a></li> 
                   <li><a href="/adverts/create">Appointment</a></li> 
-              <li><a href="/adverts/">View Appointments</a></li>
+              <li><a href="/adverts/read">View Appointments</a></li>
             </ul>
                <form class="navbar-form navbar-left" action="search_appointment.php" method="POST">
                   <div class="form-group">
@@ -24,7 +24,6 @@ https://www.w3schools.com/bootstrap/bootstrap_navbar.asp-->
                 </form>
              <!--Right side of navbar-->
             <ul class="nav navbar-nav navbar-right">
-                  
               </ul>
           </div>
         </div>

@@ -20,6 +20,17 @@ class AdvertController extends Controller
     }
 
     /**
+     * Displays all appointments to screen.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function read()
+    {
+        $appointment = Appointment::orderBy('date', 'asc')->orderBy('time', 'asc')->get();
+        return view('adverts.read')->with('appointment', $appointment);
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -39,11 +50,11 @@ class AdvertController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'patient_name' => 'required',
+            'patient_name' => 'required|max:80',
             'doctor' => 'required',
             'date' => 'required',
             'time' => 'required',
-            'comment' => 'required'
+            'comment' => 'required|max:180'
         ]);
 
         $appointment = new Appointment;
@@ -53,6 +64,8 @@ class AdvertController extends Controller
         $appointment->time = $request->input('time');
         $appointment->comment = $request->input('comment');
         $appointment->save();
+
+       return redirect('/adverts/read');
     }
 
     /**
