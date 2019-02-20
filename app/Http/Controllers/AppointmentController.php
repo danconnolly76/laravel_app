@@ -6,17 +6,16 @@ use Illuminate\Http\Request;
 use App\Doctor;
 use App\Appointment;
 use DB;
-
-class AdvertController extends Controller
+class AppointmentController extends Controller
 {
-    /**
+   /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('adverts.index');
+        return view('appointment.index');
     }
 
     /**
@@ -27,7 +26,7 @@ class AdvertController extends Controller
     public function read()
     {
         $appointment = Appointment::orderBy('date', 'asc')->orderBy('time', 'asc')->get();
-        return view('adverts.read')->with('appointment', $appointment);
+        return view('appointment.read')->with('appointment', $appointment);
     }
 
     /**
@@ -38,7 +37,7 @@ class AdvertController extends Controller
     public function create()
     {
         $docs = Doctor::all();
-        return view('adverts.create')->with('docs', $docs);
+        return view('appointment.create')->with('docs', $docs);
     }
 
     /**
@@ -65,7 +64,7 @@ class AdvertController extends Controller
         $appointment->comment = $request->input('comment');
         $appointment->save();
 
-       return redirect('/adverts/read');
+       return redirect('/appointment/read');
     }
 
     /**
@@ -121,6 +120,8 @@ class AdvertController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $appointment = Appointment::find($id);
+        $appointment->delete();
+        return redirect('/appointment/read');
     }
 }

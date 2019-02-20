@@ -11,7 +11,7 @@
         <div class="container">
          <div class="row">
           <div class="col-md-8 col-md-offset-2">
-            {!! Form::open(['action' => 'AdvertController@store', 'method' => 'POST']) !!}    
+            {!! Form::open(['action' => 'AppointmentController@store', 'method' => 'POST']) !!}    
               <div class="form-group">
                 {{Form::label('patient_name', 'Patient name: ') }}
                 {{Form::text('patient_name', '', ['class' => 'form-control', 'placeholder' => 'Patient name'])}}

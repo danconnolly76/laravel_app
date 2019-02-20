@@ -20,7 +20,7 @@
     <h1>Appointment booking system</h1>
     <p>This is an appointment booking system that as been developed with various programming languages.
        This application forms part of a final year project.</p>
-    <p><a class="btn btn-primary btn-lg" href="/adverts/create" role="button">Create Appointment</a></p>
+    <p><a class="btn btn-primary btn-lg" href="/appointment/create" role="button">Create Appointment</a></p>
     </div><!--End of jumbotron-->
   </div><!--col-md-10 col-md-offset-1-->
  </div><!--End of row-->

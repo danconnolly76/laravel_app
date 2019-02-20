@@ -37,7 +37,10 @@
                             {{$pointment->comment}}
                             </td>
                             <td>
-                            <a href='#' class="btn btn-sm btn-danger pull-right" name="cancel_button">Cancel</a>
+                            {!!Form::open(['action' => ['AppointmentController@destroy', $pointment->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
+                              {{Form::hidden('_method', 'DELETE')}}
+                              {{Form::submit('Delete', ['class' => 'btn btn-sm btn-danger'])}}
+                            {!!Form::close()!!}
                             <a href='#' class="btn btn-sm btn-warning pull-right">Update</a>
                             <a href='#' class="btn btn-sm btn-primary pull-right">Read</a> 
                             </td>    
