@@ -97,7 +97,9 @@ class AppointmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $docs = Doctor::all();
+        $appointment = Appointment::find($id);
+        return view('appointment.edit')->with('appointment', $appointment)->with('docs', $docs);
     }
 
     /**
@@ -109,7 +111,23 @@ class AppointmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'patient_name' => 'required|max:80',
+            'doctor' => 'required',
+            'date' => 'required',
+            'time' => 'required',
+            'comment' => 'required|max:180'
+        ]);
+
+        $appointment = Appointment::find($id);
+        $appointment->patient_name = $request->input('patient_name');
+        $appointment->doctor = $request->input('doctor');
+        $appointment->date = $request->input('date');
+        $appointment->time = $request->input('time');
+        $appointment->comment = $request->input('comment');
+        $appointment->save();
+
+       return redirect('/appointment/read');
     }
 
     /**

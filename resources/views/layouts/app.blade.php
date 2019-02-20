@@ -17,7 +17,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -36,10 +36,6 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
@@ -62,9 +58,14 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
-                                </ul>
+                                
                             </li>
                         @endif
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                   
+                        
                     </ul>
                 </div>
             </div>
