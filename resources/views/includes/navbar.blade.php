@@ -16,7 +16,8 @@ https://www.w3schools.com/bootstrap/bootstrap_navbar.asp-->
                   <li><a href="/appointment/create">Appointment</a></li> 
               <li><a href="/appointment/read">View Appointments</a></li>
             </ul>
-               <form class="navbar-form navbar-left" action="search_appointment.php" method="POST">
+          <form class="navbar-form navbar-left" action='{{ route("appointment.search") }}' method="POST">
+               {{ csrf_field() }}
                   <div class="form-group">
                     <input type="text" class="form-control" name="searchBox" placeholder="Search">
                   </div>

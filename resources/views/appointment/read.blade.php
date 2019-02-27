@@ -42,7 +42,7 @@
                               {{Form::submit('Delete', ['class' => 'btn btn-sm btn-danger'])}}
                             {!!Form::close()!!}
                             <a href="/appointment/{{$pointment->id}}/edit" class="btn btn-sm btn-warning pull-right">Edit</a>
-                            <a href='#' class="btn btn-sm btn-primary pull-right">Read</a> 
+                            <a href="/appointment/{{$pointment->id}}" class="btn btn-sm btn-primary pull-right">Read</a> 
                             </td>    
                           <tbody>
                             @endforeach

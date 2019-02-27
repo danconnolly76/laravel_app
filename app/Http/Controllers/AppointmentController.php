@@ -9,7 +9,6 @@ use DB;
 class AppointmentController extends Controller
 {
    /**
-     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -19,7 +18,6 @@ class AppointmentController extends Controller
     }
 
     /**
-     * Displays all appointments to screen.
      *
      * @return \Illuminate\Http\Response
      */
@@ -30,7 +28,6 @@ class AppointmentController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -41,7 +38,6 @@ class AppointmentController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -67,19 +63,18 @@ class AppointmentController extends Controller
        return redirect('/appointment/read');
     }
 
-    /**
-     * Display the specified resource.
+    /** 
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $appointment = Appointment::find($id);
+        return view('appointment.show')->with('appointment', $appointment);
     }
 
     /**
-     * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -90,7 +85,6 @@ class AppointmentController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -103,7 +97,7 @@ class AppointmentController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * 
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -130,8 +124,13 @@ class AppointmentController extends Controller
        return redirect('/appointment/read');
     }
 
+    public function searchAppointment(Request $request)
+    {
+        return view('appointment.search');
+    }
+
     /**
-     * Remove the specified resource from storage.
+     * 
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
