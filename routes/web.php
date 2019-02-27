@@ -11,7 +11,7 @@
 |
 */
 Route::get('appointment/read', 'AppointmentController@read');
-Route::post('search', 'AppointmentController@searchAppointment')->name('appointment.search');
+Route::get('search', 'AppointmentController@search')->name('appointment.search');
 Route::resource('appointment', 'AppointmentController');
 Route::get('/', 'PagesController@index');
 Auth::routes();

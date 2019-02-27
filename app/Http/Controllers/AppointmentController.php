@@ -36,6 +36,19 @@ class AppointmentController extends Controller
         $docs = Doctor::all();
         return view('appointment.create')->with('docs', $docs);
     }
+    
+
+    public function search(Request $request)
+    {
+        $this->validate($request, array(
+           'searchBox' => 'required'
+        ));
+        $input = $request->input('searchBox');
+        $search = Appointment::where('patient_name', 'LIKE', '%'.$input.'%')->get();
+        return view('appointment.search')->with('search', $search);
+        exit();   
+    }
+
 
     /**
      *
