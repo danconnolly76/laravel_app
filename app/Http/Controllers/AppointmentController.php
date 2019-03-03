@@ -16,6 +16,16 @@ class AppointmentController extends Controller
     {
         return view('appointment.index');
     }
+    
+    /**
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function showSession(Request $request)
+    {
+       $request->session()->put('user', $request->input('username'));
+       return view('appointment.index')->with('data', $request->session()->get('user'));
+    }
 
     /**
      *

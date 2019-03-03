@@ -7,6 +7,9 @@
   <div class="col-md-10 col-md-offset-1">
    <div class="panel panel-default">
     <div class="panel-heading">
+      <h4 class="panel-title">
+      <p>You are logged {{}}</p>
+      </h4>
       </div><!--End of panel panel-default-->
      </div><!--End of panel-heading-->
    </div><!--col-md-10 col-md-offset-1-->

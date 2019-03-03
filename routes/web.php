@@ -12,6 +12,7 @@
 */
 Route::get('appointment/read', 'AppointmentController@read');
 Route::get('search', 'AppointmentController@search')->name('appointment.search');
+Route::post('showSession', 'AppointmentController@showSession');
 Route::resource('appointment', 'AppointmentController');
 Route::get('/', 'PagesController@index');
 Auth::routes();
