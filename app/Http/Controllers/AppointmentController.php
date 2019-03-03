@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Doctor;
 use App\Appointment;
 use DB;
+use Illuminate\Support\Facades\Redirect;
+use Session;
+
 class AppointmentController extends Controller
 {
    /**
@@ -23,8 +26,9 @@ class AppointmentController extends Controller
      */
     public function showSession(Request $request)
     {
-       $request->session()->put('user', $request->input('username'));
-       return view('appointment.index')->with('data', $request->session()->get('user'));
+       $username = $request->session()->put('username', $request->input('username'));
+       //echo $request->session()->get('username');
+       return view('appointment.index')->with('username', $request->session()->get('username'));
     }
 
     /**
