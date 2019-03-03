@@ -21,17 +21,6 @@ class AppointmentController extends Controller
     }
     
     /**
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function showSession(Request $request)
-    {
-       $username = $request->session()->put('username', $request->input('username'));
-       //echo $request->session()->get('username');
-       return view('appointment.index')->with('username', $request->session()->get('username'));
-    }
-
-    /**
      *
      * @return \Illuminate\Http\Response
      */
