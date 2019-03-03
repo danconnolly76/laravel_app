@@ -70,6 +70,7 @@ class AppointmentController extends Controller
 
         $appointment = new Appointment;
         $appointment->patient_name = $request->input('patient_name');
+        $appointment->user_id = auth()->user()->id;
         $appointment->doctor = $request->input('doctor');
         $appointment->date = $request->input('date');
         $appointment->time = $request->input('time');
