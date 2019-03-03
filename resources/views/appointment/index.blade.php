@@ -8,7 +8,7 @@
    <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-      <p>You are logged in username: {{ Auth::user()->username }}</p>
+      <p>You are logged in username: {{ (Auth::user()->username) }}
       </h4>
       </div><!--End of panel panel-default-->
      </div><!--End of panel-heading-->
