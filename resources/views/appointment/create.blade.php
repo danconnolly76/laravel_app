@@ -3,14 +3,12 @@
 @section('maincontent')
 <main>
         <br>
-        <div class="maincontainer">
-           <div class="maincontent">
-           <h4 class="bold">To booking an appointment fill out the online form below.</h4>
-           </div><!--End of maincontainer-->
-        </div><!--End of maincontent-->
         <div class="container">
          <div class="row">
-          <div class="col-md-8 col-md-offset-2">
+          <div class="col-md-10 col-md-offset-1">
+              <div class="panel panel-default">
+                  <div class="panel-heading">Create Appointment</div>
+                  <div class="panel-body">
             {!! Form::open(['action' => 'AppointmentController@store', 'method' => 'POST']) !!}    
               <div class="form-group">
                 {{Form::label('patient_name', 'Patient name: ') }}
@@ -42,6 +40,9 @@
                 {{Form::submit('Submit', ['class' => 'btn btn-success btn-lg btn-block'])}}
               </div>
               {!! Form::close() !!}
+               </div>
+              </div>
+             </div>
             </div><!--col-md-8 col-md-offset-2-->
           </div><!--End of row-->
         </div><!--End of container-->
