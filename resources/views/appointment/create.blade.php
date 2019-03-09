@@ -2,7 +2,7 @@
 
 @section('maincontent')
 <main>
-        <br>
+        <div class="create_class">
         <div class="container">
          <div class="row">
           <div class="col-md-10 col-md-offset-1">
@@ -46,6 +46,7 @@
             </div><!--col-md-8 col-md-offset-2-->
           </div><!--End of row-->
         </div><!--End of container-->
+      </div>
     </main>
     
 @endsection()

@@ -2,15 +2,13 @@
 
 @section('maincontent')
 <main>
-        <br>
-        <div class="maincontainer">
-           <div class="maincontent">
-           <h4 class="bold">You can edit this appointment.</h4>
-           </div><!--End of maincontainer-->
-        </div><!--End of maincontent-->
+    <div class="create_class">
         <div class="container">
          <div class="row">
           <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+              <div class="panel-heading">Update Appointment</div>
+                <div class="panel-body">
             {!! Form::open(['action' => ['AppointmentController@update', $appointment->id], 'method' => 'POST']) !!}    
               <div class="form-group">
                 {{Form::label('patient_name', 'Patient name: ') }}
@@ -43,9 +41,11 @@
                 {{Form::submit('Submit', ['class' => 'btn btn-success btn-lg btn-block'])}}
               </div>
               {!! Form::close() !!}
-            </div><!--col-md-8 col-md-offset-2-->
+                </div>
+              </div><!--end panel panel-default-->
+            </div><!--End col-md-8 col-md-offset-2-->
           </div><!--End of row-->
         </div><!--End of container-->
+      </div>
     </main>
-    
 @endsection()
