@@ -9,7 +9,11 @@
               <div class="panel-body">
             <p>There are {{ $number = count($search) }} results</p>
           @foreach ($search as $find)
-            <strong> Name : </strong>{{ $find->patient_name }}
+          @if(Auth::user()->id == $find->user_id)
+           <strong> Name : </strong>{{ $find->patient_name }}
+           @else
+           <strong> Name : </strong>Private
+           @endif
             <strong> Doctor : </strong>{{ $find->doctor }}
             <strong> Date : </strong>{{ $find->date }}
             <strong> Time : </strong>{{ $find->time }}<br>

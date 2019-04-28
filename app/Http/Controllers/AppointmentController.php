@@ -8,6 +8,8 @@ use App\Appointment;
 use DB;
 use Illuminate\Support\Facades\Redirect;
 use Session;
+use Auth;
+use Exception; 
 
 class AppointmentController extends Controller
 {
@@ -47,7 +49,7 @@ class AppointmentController extends Controller
            'searchBox' => 'required'
         ));
         $input = $request->input('searchBox');
-        $search = Appointment::where('patient_name', 'LIKE', '%'.$input.'%')->get();
+        $search = Appointment::where('doctor', 'LIKE', '%'.$input.'%')->get();
         return view('appointment.search')->with('search', $search);
         exit();   
     }
@@ -96,16 +98,6 @@ class AppointmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function showDocs($id)
-    {
-       
-    }
-
-    /**
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $docs = Doctor::all();
@@ -147,8 +139,6 @@ class AppointmentController extends Controller
     }
 
     /**
-     * 
-     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

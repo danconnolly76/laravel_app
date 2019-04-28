@@ -1,4 +1,4 @@
-@extends('layouts.main')
+ @extends('layouts.main')
 
 @section('maincontent')
    <div class="table_container">
@@ -22,7 +22,11 @@
                          <tbody>
                             @foreach($appointment as $pointment)
                             <td>
+                           @if(Auth::user()->id == $pointment->user_id)
                             {{$pointment->patient_name}}
+                            @else
+                            <p>An appointment booked</p>
+                            @endif
                             </td>
                             <td>
                             {{$pointment->doctor}}
@@ -34,7 +38,11 @@
                             {{$pointment->time}}
                             </td>
                             <td>
+                            @if(Auth::user()->id == $pointment->user_id)  
                             {{$pointment->comment}}
+                            @else
+                            <p>Private</p>
+                            @endif
                             </td>
                             <td>
                              @if(Auth::user()->id == $pointment->user_id)
