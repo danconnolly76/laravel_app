@@ -62,6 +62,11 @@
               </div><!--End of panel panel-default-->
            </div><!--End of col-md-12 col-sm-12-->
         </div><!--End of row-->
+        <div class="row">
+            <div class="text-center">
+                  {!! $appointment->links(); !!}
+            </div>  
+        </div>    
       </div><!--End of container-->
    </div>
 @endsection
