@@ -28,7 +28,7 @@ class AppointmentController extends Controller
      */
     public function read()
     {
-        $appointment = Appointment::orderBy('date', 'asc')->orderBy('time', 'asc')->paginate(2);
+        $appointment = Appointment::orderBy('date', 'asc')->orderBy('time', 'asc')->paginate(10);
         return view('appointment.read')->with('appointment', $appointment);
     }
 
